@@ -49,9 +49,10 @@ what_do_with_hard = {
 }
 
 what_to_do_with_soft = {
-  13 => {
+  1 => {
+    13 => {
     2=>"H", 3=>"H", 4=>"DH", 5=>"DH", 6=>"DH", 7=>"H", 8=>"H", 9=>"H", 10=>"H", 0=>"H"
-  },
+    },
   14 => {
     2=>"H", 3=>"H", 4=>"DH", 5=>"DH", 6=>"DH", 7=>"H", 8=>"H", 9=>"H", 10=>"H", 0=>"H"
   },
@@ -60,18 +61,71 @@ what_to_do_with_soft = {
   },
   16 => {
     2=>"H", 3=>"H", 4=>"H", 5=>"DH", 6=>"DH", 7=>"DH", 8=>"H", 9=>"H", 10=>"H", 0=>"H"
-  },
+    },
   17 => {
     2=>"DH", 3=>"DH", 4=>"DH", 5=>"DH", 6=>"DH", 7=>"H", 8=>"H", 9=>"H", 10=>"H", 0=>"H"
-  },
+    },
   18 => {
     2=>"S", 3=>"DS", 4=>"DS", 5=>"DS", 6=>"DS", 7=>"S", 8=>"S", 9=>"H", 10=>"H", 0=>"S"
-  },
+    },
   19 => {
     2=>"S", 3=>"S", 4=>"S", 5=>"S", 6=>"DH", 7=>"S", 8=>"S", 9=>"S", 10=>"S", 0=>"S"
-  },
+    },
   20 => {
     2=>"S", 3=>"S", 4=>"S", 5=>"S", 6=>"S", 7=>"S", 8=>"S", 9=>"S", 10=>"S", 0=>"S"
+    }
+  },
+  2 => {
+    13 => {
+    2=>"H", 3=>"H", 4=>"H", 5=>"DH", 6=>"DH", 7=>"H", 8=>"H", 9=>"H", 10=>"H", 0=>"H"
+    },
+  14 => {
+    2=>"H", 3=>"H", 4=>"H", 5=>"DH", 6=>"DH", 7=>"H", 8=>"H", 9=>"H", 10=>"H", 0=>"H"
+  },
+  15 => {
+    2=>"H", 3=>"H", 4=>"DH", 5=>"DH", 6=>"DH", 7=>"H", 8=>"H", 9=>"H", 10=>"H", 0=>"H"
+  },
+  16 => {
+    2=>"H", 3=>"H", 4=>"DH", 5=>"DH", 6=>"DH", 7=>"DH", 8=>"H", 9=>"H", 10=>"H", 0=>"H"
+    },
+  17 => {
+    2=>"H", 3=>"DH", 4=>"DH", 5=>"DH", 6=>"DH", 7=>"H", 8=>"H", 9=>"H", 10=>"H", 0=>"H"
+    },
+  18 => {
+    2=>"S", 3=>"DS", 4=>"DS", 5=>"DS", 6=>"DS", 7=>"S", 8=>"S", 9=>"H", 10=>"H", 0=>"H"
+    },
+  19 => {
+    2=>"S", 3=>"S", 4=>"S", 5=>"S", 6=>"S", 7=>"S", 8=>"S", 9=>"S", 10=>"S", 0=>"S"
+    },
+  20 => {
+    2=>"S", 3=>"S", 4=>"S", 5=>"S", 6=>"S", 7=>"S", 8=>"S", 9=>"S", 10=>"S", 0=>"S"
+    }
+  },
+  4 => {
+    13 => {
+    2=>"H", 3=>"H", 4=>"H", 5=>"DH", 6=>"DH", 7=>"H", 8=>"H", 9=>"H", 10=>"H", 0=>"H"
+    },
+  14 => {
+    2=>"H", 3=>"H", 4=>"H", 5=>"DH", 6=>"DH", 7=>"H", 8=>"H", 9=>"H", 10=>"H", 0=>"H"
+  },
+  15 => {
+    2=>"H", 3=>"H", 4=>"DH", 5=>"DH", 6=>"DH", 7=>"H", 8=>"H", 9=>"H", 10=>"H", 0=>"H"
+  },
+  16 => {
+    2=>"H", 3=>"H", 4=>"DH", 5=>"DH", 6=>"DH", 7=>"DH", 8=>"H", 9=>"H", 10=>"H", 0=>"H"
+    },
+  17 => {
+    2=>"H", 3=>"DH", 4=>"DH", 5=>"DH", 6=>"DH", 7=>"H", 8=>"H", 9=>"H", 10=>"H", 0=>"H"
+    },
+  18 => {
+    2=>"S", 3=>"DS", 4=>"DS", 5=>"DS", 6=>"DS", 7=>"S", 8=>"S", 9=>"H", 10=>"H", 0=>"H"
+    },
+  19 => {
+    2=>"S", 3=>"S", 4=>"S", 5=>"S", 6=>"S", 7=>"S", 8=>"S", 9=>"S", 10=>"S", 0=>"S"
+    },
+  20 => {
+    2=>"S", 3=>"S", 4=>"S", 5=>"S", 6=>"S", 7=>"S", 8=>"S", 9=>"S", 10=>"S", 0=>"S"
+    }
   },
 }
 
@@ -106,7 +160,6 @@ what_to_do_with_a_pair = {
   "a" => {
     2=>"P", 3=>"P", 4=>"P", 5=>"P", 6=>"P", 7=>"P", 8=>"P", 9=>"P", 10=>"P", 0=>"P"
   },
-
 }
 
 def return_strategy_for_pair(user_card, house_card, strategy)
@@ -117,11 +170,11 @@ def return_strategy_for_hard_hand(user_total, house_card, strategy)
   strategy[user_total][house_card]
 end
 
-def return_strategy_for_soft_hand (user_card_1, user_card_2, house_card, strategy)
+def return_strategy_for_soft_hand (decks, user_card_1, user_card_2, house_card, strategy)
   if user_card_1 == "a"
     user_card_1 = 11
     user_total = user_card_1 + user_card_2.to_i
-    strategy[user_total][house_card]
+    strategy[decks][user_total][house_card]
   else
     user_card_2 = 11
     user_total = user_card_1.to_i + user_card_2
@@ -133,6 +186,8 @@ end
 puts "What are your two cards? Please put 10 for face cards and a for Ace"
 player_first_card = gets.chomp
 player_second_card = gets.chomp
+puts "How man decks are you playing with: 1,2,4?"
+number_of_decks = gets.chomp.to_i
 if player_first_card + player_second_card == "a10" ||player_first_card + player_second_card == "10a"
   puts "BLACKJACK!"
   exit
@@ -142,9 +197,9 @@ dealers_card = gets.chomp.to_i
 if player_first_card == player_second_card
   puts return_strategy_for_pair(player_first_card, dealers_card, what_to_do_with_a_pair)
 elsif player_first_card == "a" || player_second_card == "a"
-  puts return_strategy_for_soft_hand(player_first_card, player_second_card, dealers_card, what_to_do_with_soft)
+  puts return_strategy_for_soft_hand(number_of_decks, player_first_card, player_second_card, dealers_card, what_to_do_with_soft)
 else
   players_total = player_first_card.to_i + player_second_card.to_i
-  puts return_strategy_for_hard_hand(players_total, dealers_card, what_do_with_hard)
-
+  hard_solution= return_strategy_for_hard_hand(players_total, dealers_card, what_do_with_hard)
+  puts hard_solution
 end
